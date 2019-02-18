@@ -1,13 +1,17 @@
+<!--
+# -*- mode: jinja -*-
+-->
+
 About r-tsibble
 ===============
 
-Home: https://pkg.earo.me/tsibble
+Home: https://tsibble.tidyverts.org
 
 Package license: GPL-3
 
 Feedstock license: BSD 3-Clause
 
-Summary: Provides a 'tbl_ts' class (the 'tsibble') to store and manage temporal data in a data-centric format, which is built on top of the 'tibble'. The 'tsibble' aims at easily manipulating and analysing temporal data, including counting and filling time gaps, aggregate over calendar periods, performing rolling window calculations, and etc.
+Summary: Provides a 'tbl_ts' class (the 'tsibble') to store and manage temporal data in a data-centric format, which is built on top of the 'tibble'. The 'tsibble' aims at easily manipulating and analysing temporal data, including counting and filling in time gaps, aggregate over calendar periods, performing rolling window calculations, and etc.
 
 
 
@@ -49,6 +53,8 @@ conda search r-tsibble --channel conda-forge
 
 About conda-forge
 =================
+
+[![Powered by NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](http://numfocus.org)
 
 conda-forge is a community-led conda channel of installable packages.
 In order to provide high-quality builds, the process has been automated into the
@@ -104,3 +110,10 @@ In order to produce a uniquely identifiable distribution:
  * If the version of a package **is** being increased, please remember to return
    the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string)
    back to 0.
+
+Feedstock Maintainers
+=====================
+
+* [@conda-forge/r](https://github.com/conda-forge/r/)
+* [@philip-khor](https://github.com/philip-khor/)
+
