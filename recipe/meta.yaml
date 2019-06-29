@@ -1,4 +1,4 @@
-{% set version = "0.8.0" %}
+{% set version = '0.8.2' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/tsibble_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/tsibble/tsibble_{{ version }}.tar.gz
-  sha256: a5fd606204394e9492894c6c8c926b69614f92731eb0c652a17790455bf5e04a
+  sha256: a310dda724096a17680165c75f9bf4f205ba03708535a7e0611f11e0628d32b6
 
 build:
   merge_build_host: True  # [win]
@@ -21,9 +21,10 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}        # [not win]
-    - {{ compiler('cxx') }}      # [not win]
-    - {{native}}toolchain        # [win]
+    - {{ compiler('c') }}              # [not win]
+    - {{ compiler('m2w64_c') }}        # [win]
+    - {{ compiler('cxx') }}            # [not win]
+    - {{ compiler('m2w64_cxx') }}      # [win]
     - {{posix}}filesystem        # [win]
     - {{posix}}make
     - {{posix}}sed               # [win]
@@ -34,7 +35,7 @@ requirements:
     - r-rcpp >=0.12.3
     - r-anytime >=0.3.1
     - r-dplyr >=0.8.0
-    - r-lubridate
+    - r-lubridate >=1.7.0
     - r-purrr >=0.2.3
     - r-rlang >=0.2.0
     - r-tibble >=2.0.1
@@ -46,7 +47,7 @@ requirements:
     - r-rcpp >=0.12.3
     - r-anytime >=0.3.1
     - r-dplyr >=0.8.0
-    - r-lubridate
+    - r-lubridate >=1.7.0
     - r-purrr >=0.2.3
     - r-rlang >=0.2.0
     - r-tibble >=2.0.1
@@ -76,14 +77,14 @@ extra:
 # Type: Package
 # Package: tsibble
 # Title: Tidy Temporal Data Frames and Tools
-# Version: 0.7.0
-# Authors@R:  c(person(given = "Earo", family = "Wang", role = c("aut", "cre"), email = "earo.wang@gmail.com", comment = c(ORCID = "0000-0001-6448-5260")), person(given = "Di", family = "Cook", role = c("aut", "ths"), comment = c(ORCID = "0000-0002-3813-7155")), person(given = "Rob", family = "Hyndman", role = c("aut", "ths"), comment = c(ORCID = "0000-0002-2140-5352")), person(given = "Mitchell", family = "O'Hara-Wild", role = "ctb"))
+# Version: 0.8.2
+# Authors@R:  c(person(given = "Earo", family = "Wang", role = c("aut", "cre"), email = "earo.wang@gmail.com", comment = c(ORCID = "0000-0001-6448-5260")), person(given = "Di", family = "Cook", role = c("aut", "ths"), comment = c(ORCID = "0000-0002-3813-7155")), person(given = "Rob", family = "Hyndman", role = c("aut", "ths"), comment = c(ORCID = "0000-0002-2140-5352")), person(given = "Mitchell", family = "O'Hara-Wild", role = "aut", comment = c(ORCID = "0000-0001-6729-7695")))
 # Description: Provides a 'tbl_ts' class (the 'tsibble') to store and manage temporal data in a data-centric format, which is built on top of the 'tibble'. The 'tsibble' aims at easily manipulating and analysing temporal data, including counting and filling in time gaps, aggregate over calendar periods, performing rolling window calculations, and etc.
 # License: GPL-3
 # URL: https://tsibble.tidyverts.org
 # BugReports: https://github.com/tidyverts/tsibble/issues
-# Depends: R (>= 3.1.3)
-# Imports: anytime (>= 0.3.1), dplyr (>= 0.8.0), lubridate, purrr (>= 0.2.3), Rcpp (>= 0.12.3), rlang (>= 0.2.0), tibble (>= 2.0.1), tidyr, tidyselect
+# Depends: R (>= 3.2.0)
+# Imports: anytime (>= 0.3.1), dplyr (>= 0.8.0), lubridate (>= 1.7.0), purrr (>= 0.2.3), Rcpp (>= 0.12.3), rlang (>= 0.2.0), tibble (>= 2.0.1), tidyr, tidyselect
 # Suggests: covr, furrr, ggplot2 (>= 2.2.0), hms, knitr, nanotime, nycflights13 (>= 1.0.0), pillar (>= 1.0.1), rmarkdown, spelling, testthat, timeDate
 # LinkingTo: Rcpp (>= 0.12.0)
 # VignetteBuilder: knitr
@@ -92,10 +93,9 @@ extra:
 # Language: en-GB
 # LazyData: true
 # RoxygenNote: 6.1.1
-# Collate: 'RcppExports.R' 'as-tsibble.R' 'bind.R' 'data.R' 'gaps.R' 'deprecated.R' 'dplyr-groups.R' 'dplyr-verbs.R' 'dplyr-join.R' 'error.R' 'filter-index.R' 'format.R' 'holiday.R' 'index-by.R' 'index-valid.R' 'interval.R' 'key-group.R' 'new-data.R' 'period.R' 'reexports.R' 'slide.R' 'stretch.R' 'subset.R' 'tidyr-verbs.R' 'tile.R' 'time-wise.R' 'ts2tsibble.R' 'tsibble-pkg.R' 'tsibble2ts.R' 'type-sum.R' 'update.R' 'utils-format.R' 'utils.R' 'zzz.R'
 # NeedsCompilation: yes
-# Packaged: 2019-02-18 03:25:50 UTC; earo
-# Author: Earo Wang [aut, cre] (<https://orcid.org/0000-0001-6448-5260>), Di Cook [aut, ths] (<https://orcid.org/0000-0002-3813-7155>), Rob Hyndman [aut, ths] (<https://orcid.org/0000-0002-2140-5352>), Mitchell O'Hara-Wild [ctb]
+# Packaged: 2019-06-10 09:48:05 UTC; earo
+# Author: Earo Wang [aut, cre] (<https://orcid.org/0000-0001-6448-5260>), Di Cook [aut, ths] (<https://orcid.org/0000-0002-3813-7155>), Rob Hyndman [aut, ths] (<https://orcid.org/0000-0002-2140-5352>), Mitchell O'Hara-Wild [aut] (<https://orcid.org/0000-0001-6729-7695>)
 # Maintainer: Earo Wang <earo.wang@gmail.com>
 # Repository: CRAN
-# Date/Publication: 2019-02-18 10:00:02 UTC
+# Date/Publication: 2019-06-10 10:20:03 UTC
