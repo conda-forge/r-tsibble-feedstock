@@ -7,7 +7,7 @@ Package license: GPL-3
 
 Feedstock license: BSD 3-Clause
 
-Summary: Provides a 'tbl_ts' class (the 'tsibble') for temporal data in an  explicit data- and model-oriented format. The 'tsibble' provides tools to  easily manipulate and analyse temporal data, such as filling in time gaps, aggregating over calendar periods, performing rolling window calculations, and etc.
+Summary: Provides a 'tbl_ts' class (the 'tsibble') for temporal data in an data- and model-oriented format. The 'tsibble' provides tools to easily manipulate and analyse temporal data, such as filling in  time gaps, aggregating over calendar periods, and etc.
 
 
 
