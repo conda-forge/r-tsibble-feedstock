@@ -1,4 +1,4 @@
-{% set version = "0.8.6" %}
+{% set version = "0.9.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/tsibble_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/tsibble/tsibble_{{ version }}.tar.gz
-  sha256: 72ad15d05cb0819d2a7d20abb8219941ef8629501d596d643f8865ea1ccfa4ee
+  sha256: f0346590605c4134fa91d4d974abe0d8119f1154deea9471e9ccc94de0cc0234
 
 build:
-  merge_build_host: True  # [win]
-  number: 1
+  merge_build_host: true  # [win]
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -54,12 +54,10 @@ test:
 about:
   home: https://tsibble.tidyverts.org
   license: GPL-3
-  summary: Provides a 'tbl_ts' class (the 'tsibble') for temporal data in an data- and model-oriented
-    format. The 'tsibble' provides tools to easily manipulate and analyse temporal data,
-    such as filling in  time gaps, aggregating over calendar periods, and etc.
+  summary: Provides a 'tbl_ts' class (the 'tsibble') for temporal data in an data- and model-oriented format. The 'tsibble' provides tools to easily manipulate and analyse temporal data, such as filling in  time gaps, aggregating over calendar periods, and etc.
   license_family: GPL3
   license_file:
-    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
