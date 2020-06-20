@@ -1,4 +1,4 @@
-{% set version = "0.9.0" %}
+{% set version = "0.9.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/tsibble_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/tsibble/tsibble_{{ version }}.tar.gz
-  sha256: f0346590605c4134fa91d4d974abe0d8119f1154deea9471e9ccc94de0cc0234
+  sha256: 46018a2709f7f0423f8f05c7b55fcd486ab6e6d9f4ab32ad72e751e7b99b71fc
 
 build:
   merge_build_host: true  # [win]
