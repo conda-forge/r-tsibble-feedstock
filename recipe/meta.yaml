@@ -14,7 +14,7 @@ source:
 
 build:
   merge_build_host: true  # [win]
-  number: 1
+  number: 2
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -34,6 +34,7 @@ requirements:
     - r-tibble >=3.0.0
     - r-tidyselect >=1.0.0
     - r-vctrs >=0.3.1
+    - r-generics
   run:
     - r-base
     - r-anytime >=0.3.1
@@ -45,6 +46,13 @@ requirements:
     - r-tibble >=3.0.0
     - r-tidyselect >=1.0.0
     - r-vctrs >=0.3.1
+    - r-generics
+  run_constrained: 
+    - r-ggplot2 >=3.3.0
+    - r-nycflights13 >=1.0.0
+    - r-scales >=1.1.0
+    - r-testthat >=3.0.0
+    - r-tidyr >=1.1.0
 
 test:
   commands:
