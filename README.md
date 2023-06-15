@@ -1,11 +1,11 @@
-About r-tsibble
-===============
+About r-tsibble-feedstock
+=========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-tsibble-feedstock/blob/main/LICENSE.txt)
 
 Home: https://tsibble.tidyverts.org
 
 Package license: GPL-3.0-only
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-tsibble-feedstock/blob/main/LICENSE.txt)
 
 Summary: Provides a 'tbl_ts' class (the 'tsibble') for temporal data in an data- and model-oriented format. The 'tsibble' provides tools to easily manipulate and analyse temporal data, such as filling in  time gaps, aggregating over calendar periods, and etc.
 
