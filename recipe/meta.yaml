@@ -1,6 +1,5 @@
 {% set version = "1.1.5" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-tsibble
@@ -13,8 +12,7 @@ source:
   sha256: e63183cd0914d4a9ac59d036ba3f6ce03b9af6529a181a04141ea0c1688ac4ab
 
 build:
-  merge_build_host: true  # [win]
-  number: 0
+  number: 1
   noarch: generic
   rpaths:
     - lib/R/lib/
